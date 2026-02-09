@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AskmeIdentity</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: #f5f8ff; color: #1f2937; }
+    img { width: 100%; display: block; }
+
+    /* NAVBAR */
+    header {
+      background: #fff;
+      padding: 20px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    nav a { margin: 0 18px; font-weight: 500; cursor: pointer; }
+    .btn { background: linear-gradient(90deg,#3b2cc4,#9b5cff); color: #fff; padding: 10px 22px; border-radius: 8px; }
+
+    /* HERO */
+    .hero {
+      padding: 90px 80px;
+      background: radial-gradient(circle at right, #ffffff 0%, #3b2cc4 45%, #2a1fa0 100%);
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      align-items: center;
+    }
+    .hero h1 { font-size: 56px; line-height: 1.15; margin: 20px 0; }
+    .hero h1 span { color: #58b6ff; }
+    .hero small { letter-spacing: 2px; opacity: .8; }
+    .hero-actions { display: flex; gap: 22px; margin-top: 30px; }
+    .outline { border: 2px solid #fff; padding: 12px 26px; border-radius: 10px; }
+
+    .search {
+      margin-top: 35px;
+      background: #fff;
+      border-radius: 10px;
+      display: flex;
+      overflow: hidden;
+      width: 420px;
+    }
+    .search input { border: none; padding: 14px; flex: 1; }
+    .search button { background: #6a4dfd; border: none; color: #fff; padding: 0 26px; }
+
+    /* BRANDS */
+    .brands {
+      background: linear-gradient(90deg,#6b5cff,#4c46d1);
+      padding: 30px 80px;
+      display: flex;
+      justify-content: space-around;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* FEATURED COURSES */
+    .section { padding: 90px 80px; }
+    .section h2 { text-align: center; font-size: 36px; }
+    .section p { text-align: center; margin: 10px 0 50px; color: #6b7280; }
+
+    .courses {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 32px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,.08);
+    }
+
+    .card img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-body { padding: 22px; }
+    .price { font-weight: 600; margin-top: 10px; }
+
+    /* STEPS */
+    .steps {
+      background: linear-gradient(90deg,#7a8cff,#4b1fb8);
+      padding: 70px 80px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .step-box {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      border: 2px solid rgba(255,255,255,.3);
+    }
+
+    .step { padding: 30px; border-right: 1px dashed rgba(255,255,255,.4); }
+    .step:last-child { border-right: none; }
+
+    /* CATEGORIES */
+    .cats { display: grid; grid-template-columns: repeat(6,1fr); gap: 24px; }
+    .cat {
+      background: #fff;
+      padding: 30px;
+      border-radius: 18px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+      font-weight: 500;
+    }
+
+    /* SUBSCRIBE */
+    .subscribe {
+      margin: 80px;
+      padding: 60px;
+      border-radius: 24px;
+      background: linear-gradient(90deg,#8b9cff,#d946ef);
+      text-align: center;
+      color: #fff;
+    }
+    .subscribe input { padding: 14px; width: 280px; border-radius: 8px; border: none; }
+    .subscribe button { padding: 14px 26px; border-radius: 8px; border: none; background: #1e40af; color: #fff; }
+
+    /* VIDEO */
+    .video { padding: 90px; display: flex; justify-content: center; }
+
+    /* TESTIMONIALS */
+    .tests { padding: 90px; text-align: center; }
+    .test-grid { margin-top: 50px; display: grid; grid-template-columns: repeat(3,1fr); gap: 26px; }
+    .test { background: #fff; padding: 26px; border-radius: 16px; box-shadow: 0 15px 30px rgba(0,0,0,.08); }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(90deg,#7c3aed,#3b82f6);
+      padding: 70px 80px;
+      color: #fff;
+    }
+    .footer { display: grid; grid-template-columns: repeat(5,1fr); gap: 30px; }
+    .copy { text-align: center; margin-top: 40px; }
+
+    @media(max-width:1024px){
+      header,.hero,.section,.steps,.subscribe,footer{padding:40px}
+      .hero,.courses,.step-box,.cats,.test-grid,.footer{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <strong>AskmeIdentity</strong>
+  <nav>
+    <a>Home</a><a>About</a><a>Courses</a><a>Contact</a>
+  </nav>
+  <div>
+    <a>Login</a>
+    <a class="btn">Signup</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <small>SUCCESSFUL COACHES ARE VISIONARIES</small>
+    <h1>Good <span>coaching</span> is<br>good teaching &<br>nothing else.</h1>
+    <div class="hero-actions">
+      <a class="outline">View Courses</a>
+      <a>Get Free Consultation</a>
+    </div>
+    <div class="search">
+      <input placeholder="What do you want to learn today?">
+      <button>Search</button>
+    </div>
+  </div>
+  <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b" alt="teacher">
+</section>
+
+<section class="brands">
+  <span>Spotify</span><span>Amazon</span><span>Cisco</span><span>Logitech</span><span>Amazon</span>
+</section>
+
+<section class="section">
+  <h2>Featured <span style="color:#6a4dfd">Course</span></h2>
+  <p>The feature courses are we invented our teaching part</p>
+
+  <div class="courses">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" />
+      <div class="card-body">
+        <h4>Motion Graphics: Create a Nice Typography Animation</h4>
+        <div class="price">Rs.499</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" />
+      <div class="card-body">
+        <h4>Advance PHP knowledge with JS to make smart web</h4>
+        <div class="price">Rs.499</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c" />
+      <div class="card-body">
+        <h4>Education Software and PHP and JS System Script</h4>
+        <div class="price">Rs.499</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps">
+  <p>We are providing the best courses and top classes.</p>
+  <div class="step-box">
+    <div class="step"><h3>01. Learn</h3><p>Learn continually.</p></div>
+    <div class="step"><h3>02. Graduate</h3><p>Be courageous.</p></div>
+    <div class="step"><h3>03. Work</h3><p>Build your career.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Top <span style="color:#3b82f6">Categories</span></h2>
+  <p>100+ unique online course list designs</p>
+  <div class="cats">
+    <div class="cat">Digital Marketing</div>
+    <div class="cat">Web Development</div>
+    <div class="cat">Art & Humanities</div>
+    <div class="cat">Personal Development</div>
+    <div class="cat">IT & Software</div>
+    <div class="cat">Graphic Design</div>
+  </div>
+</section>
+
+<section class="subscribe">
+  <h2>Subscribe For Get Update Every New Courses</h2>
+  <p>20k+ students daily learn with Eduvi.</p><br>
+  <input placeholder="enter your email">
+  <button>Subscribe</button>
+</section>
+
+<section class="video">
+  <img src="YT.png" alt="">
+</section>
+
+<section class="tests">
+  <h2>Testimonials</h2>
+  <p>What our student say about us</p>
+  <div class="test-grid">
+    <div class="test">Such an amazing trainer and easily understand the entire syllabus.</div>
+    <div class="test">Such an amazing trainer and easily understand the entire syllabus.</div>
+    <div class="test">Such an amazing trainer and easily understand the entire syllabus.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer">
+    <div>AskmeIdentity<br><small>Hyderabad, India</small></div>
+    <div>Classes<br>Virtual<br>Offline</div>
+    <div>Community<br>Learners<br>Developers</div>
+    <div>Quick Links<br>Courses<br>Admissions</div>
+    <div>More<br>Privacy<br>Help</div>
+  </div>
+  <div class="copy">© 2026 askmeidentity</div>
+</footer>
+
+</body>
+</html>
